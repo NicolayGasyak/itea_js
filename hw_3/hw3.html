@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #id{
+            color : red;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p id="id">0</p>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <!-- <button onclick="startstop()">startstop</button> -->
+    <button onclick="countdown()">countdown</button>
+    <!-- <button onclick="startstopBack()">startstopBack</button> -->
+
+    <script>
+        var seconds_timer;
+        // ..........................................
+        var seconds = 0;
+        // ..........................................
+        function start() {
+
+            seconds_timer = setInterval(function () {
+                if (seconds < 30) {
+                    seconds++;
+                    var list = document.getElementById('id');
+                    list.innerText = seconds;
+                }
+            }, 1000);
+        }
+        // ..........................................
+        function stop() {
+            clearInterval(seconds_timer);
+        }
+        // ..........................................
+        // function startstop() {
+
+        //     seconds_timer = setInterval(function () {
+        //         if (seconds < 30) {
+        //             seconds++;
+        //             var list = document.getElementById('id');
+        //             list.innerText = seconds;
+        //         }
+        //     }, 1000);
+        // }
+        // ..........................................
+        function countdown() {
+            seconds_timer = setInterval(function () {
+                if (seconds < 30) {
+                    seconds--;
+                    var list = document.getElementById('id');
+                    list.innerText = seconds;
+                }
+            }, 1000);
+
+        }
+        // ..........................................
+        // function startstopBack() {
+
+        //     seconds_timer = setInterval(function () {
+        //         if (seconds < 30) {
+        //             seconds--;
+        //             var list = document.getElementById('id');
+        //             list.innerText = seconds;
+        //         }
+        //     }, 1000);
+        // }
+
+    </script>
+</body>
+
+</html>
